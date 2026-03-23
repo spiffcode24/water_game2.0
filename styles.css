@@ -36,7 +36,9 @@ Secondary Colors:
 
 body {
   font-family: "Nunito", Arial, Helvetica, sans-serif;
-  background: linear-gradient(to right, #ffe48a, #a8d9ff);
+  background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), 
+              url('img/cw_logo.png') center / contain no-repeat fixed;
+  background-color: linear-gradient(to right, #ffe48a, #a8d9ff);
   color: var(--ink);
   min-height: 100vh;
 }
