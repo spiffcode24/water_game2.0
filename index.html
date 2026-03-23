@@ -10,14 +10,37 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <audio id="backgroundMusic" loop>
+    <source src="Cloud Dancer.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="fillingSound" loop>
+    <source src="water_fill.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="throwAwaySound">
+    <source src="throw-away.mp3" type="audio/mpeg">
+  </audio>
   <button id="homeBtn" class="home-btn" aria-label="Go to home screen">Home</button>
-    <h1>Welcome to the Charity Water Game Prototype</h1>
+  <div class="difficulty-panel" aria-label="Difficulty selection">
+    <button id="easyBtn" class="difficulty-btn easy-btn" aria-pressed="true">Easy</button>
+    <button id="mediumBtn" class="difficulty-btn medium-btn" aria-pressed="false">Medium</button>
+    <button id="hardBtn" class="difficulty-btn hard-btn" aria-pressed="false">Hard</button>
+    <div class="sound-control-box">
+      <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="70" aria-label="Volume control">
+      <button id="muteBtn" class="mute-btn" aria-label="Mute sound">🔊</button>
+    </div>
+    <div class="sound-help-text">
+      💡 Click the speaker button to start the music!
+    </div>
+  </div>
+    <h1>Welcome to the Charity Water Game </h1>
     <div class="game-wrapper">
     <header class="top-bar">
       <div class="brand">
         <h1>Water Fills Fast</h1>
-        <p>charity: water prototype</p>
+        <p>charity: water</p>
       </div>
+
+
 
       <div class="hud">
         <div class="hud-card">
@@ -42,7 +65,7 @@
     <main class="game-area">
       <section class="instructions-card" id="instructionsCard">
         <h2>How to Play</h2>
-        <p>
+        <p id="instructionsText">
           Press and hold the fill button to raise the water level.
           Release in the blue target zone to score points.
           Overfill the bottle and you create waste.
@@ -77,7 +100,7 @@
                 draggable="true"
                 aria-label="Contaminated bottle"
               >
-                Contaminated Bottle
+                <img src="img/water-can-transparent.png" alt="Water can to throw" class="trash-bottle-img">
               </div>
               <div id="wasteDump" class="waste-dump" aria-label="Waste dump">
                 Waste Dump
