@@ -1,0 +1,432 @@
+/* Charity: water Brand Colors
+
+Primary Colors:
+- Yellow:     #FFC907
+- Blue:       #2E9DF7
+
+Secondary Colors:
+- Light Blue: #8BD1CB
+- Green:      #4FCB53
+- Orange:     #FF902A
+- Red:        #F5402C
+- Dark Green: #159A48
+- Pink:       #F16061
+
+*/
+
+:root {
+  --yellow: #ffc907;
+  --blue: #2e9df7;
+  --light-blue: #8bd1cb;
+  --green: #4fcb53;
+  --orange: #ff902a;
+  --red: #f5402c;
+  --dark-green: #159a48;
+  --pink: #f16061;
+
+  --ink: #1f2a2e;
+  --soft-paper: #fffdf7;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  background: linear-gradient(to right, #ffe48a, #a8d9ff);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+.home-btn {
+  position: fixed;
+  top: 16px;
+  left: 34px;
+  z-index: 999;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 24px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: "Bangers", "Trebuchet MS", sans-serif;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(to right, var(--dark-green), var(--green));
+  box-shadow: 0 4px 10px rgba(21, 154, 72, 0.25);
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.home-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+body > h1 {
+  text-align: center;
+  margin: 20px 0 0;
+  color: #0f7e3c;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+  font-family: "Bangers", "Trebuchet MS", sans-serif;
+  letter-spacing: 1.8px;
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
+}
+
+p {
+  font-family: "Bangers", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.8px;
+}
+
+.game-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.brand h1 {
+  font-size: 2rem;
+  color: var(--dark-green);
+  font-family: "Bangers", "Trebuchet MS", sans-serif;
+  letter-spacing: 1.6px;
+}
+
+.brand p {
+  color: #2879b9;
+  margin-top: 6px;
+}
+
+.hud {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(110px, 1fr));
+  gap: 12px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.hud-card {
+  background: #f4fbfd;
+  border: 2px solid #b9dbf6;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(30, 45, 55, 0.08);
+}
+
+.hud-card:nth-child(1) {
+  border-color: #f8de7f;
+}
+
+.hud-card:nth-child(2) {
+  border-color: #9ccdf6;
+}
+
+.hud-card:nth-child(3) {
+  border-color: #93de96;
+}
+
+.hud-card:nth-child(4) {
+  border-color: #f7a6a7;
+}
+
+.hud-card .label {
+  display: block;
+  font-size: 0.9rem;
+  color: #4d5c66;
+  margin-bottom: 6px;
+}
+
+.hud-card span:last-child {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.game-area {
+  background: #f7fcff;
+  border: 2px solid #d7ebfb;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 8px 22px rgba(20, 35, 48, 0.12);
+}
+
+.instructions-card,
+.end-screen {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.instructions-card h2,
+.end-screen h2,
+.feedback-box h2 {
+  margin-bottom: 12px;
+  font-family: "Bangers", "Trebuchet MS", sans-serif;
+  letter-spacing: 1.2px;
+  font-size: 1.9rem;
+}
+
+.instructions-card p,
+.end-screen p,
+.feedback-box p {
+  line-height: 1.6;
+  color: #32414b;
+}
+
+.primary-btn,
+.fill-btn,
+.secondary-btn {
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: "Bangers", "Trebuchet MS", sans-serif;
+  letter-spacing: 1.1px;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.primary-btn {
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: linear-gradient(to right, var(--yellow), var(--orange));
+  color: #111;
+  box-shadow: 0 4px 10px rgba(255, 144, 42, 0.28);
+}
+
+.fill-btn {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(to right, var(--blue), var(--light-blue));
+  color: white;
+  box-shadow: 0 4px 10px rgba(46, 157, 247, 0.25);
+}
+
+.secondary-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px 18px;
+  background: linear-gradient(to right, var(--pink), var(--red));
+  color: white;
+  box-shadow: 0 4px 10px rgba(241, 96, 97, 0.28);
+}
+
+.primary-btn:hover,
+.fill-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.play-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feedback-box,
+.controls-box {
+  background: #fff8e8;
+  border: 2px solid #ffd3ac;
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.feedback-box {
+  border-color: #b8e9ba;
+}
+
+.controls-box {
+  border-color: #ffc58f;
+}
+
+.bottle-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottle-and-dump {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.bottle-container {
+  position: relative;
+  width: 170px;
+  height: 380px;
+  border: 5px solid #1b7d53;
+  border-radius: 30px 30px 18px 18px;
+  background: linear-gradient(to top, #eaf8ff, #fffbee);
+  overflow: hidden;
+}
+
+.water-fill {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(to top, var(--blue), var(--light-blue));
+  transition: height 0.05s linear;
+}
+
+.target-zone {
+  position: absolute;
+  width: 100%;
+  height: 15%;
+  bottom: 80%;
+  background: rgba(79, 203, 83, 0.24);
+  border-top: 2px dashed var(--dark-green);
+  border-bottom: 2px dashed var(--dark-green);
+  z-index: 2;
+}
+
+.bottle-label {
+  margin-top: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: #1d7448;
+}
+
+.waste-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 130px;
+}
+
+.trash-bottle {
+  width: 110px;
+  padding: 8px;
+  border-radius: 10px;
+  border: 2px dashed var(--red);
+  background: #ffe8e8;
+  color: #8e1f1f;
+  text-align: center;
+  font-size: 0.85rem;
+  cursor: grab;
+  user-select: none;
+}
+
+.trash-bottle:active {
+  cursor: grabbing;
+}
+
+.waste-dump {
+  width: 120px;
+  min-height: 120px;
+  border-radius: 12px 12px 18px 18px;
+  border: 3px solid #6f7478;
+  background: linear-gradient(to bottom, #d8dde1, #9aa3ab);
+  color: #1d252c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  font-family: "Bangers", "Trebuchet MS", sans-serif;
+  letter-spacing: 1px;
+}
+
+.waste-dump.ready {
+  border-color: var(--red);
+  box-shadow: 0 0 0 4px rgba(245, 64, 44, 0.2);
+}
+
+.fill-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 33, 45, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.popup-overlay.hidden {
+  display: none;
+}
+
+.popup-card {
+  width: min(92vw, 460px);
+  background: linear-gradient(to bottom right, #fff8dd, #eaf8ff);
+  border: 3px solid var(--dark-green);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(15, 30, 40, 0.25);
+  text-align: center;
+  padding: 24px;
+}
+
+.popup-card h2 {
+  font-family: "Bangers", "Trebuchet MS", sans-serif;
+  letter-spacing: 1.2px;
+  color: var(--dark-green);
+  margin-bottom: 10px;
+}
+
+.popup-card p {
+  color: #2f3f4a;
+  margin-bottom: 16px;
+}
+
+.popup-btn {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .play-area {
+    grid-template-columns: 1fr;
+  }
+
+  .top-bar {
+    flex-direction: column;
+  }
+
+  .hud {
+    max-width: 100%;
+  }
+
+  .bottle-container {
+    width: 140px;
+    height: 320px;
+  }
+
+  .bottle-and-dump {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .waste-area {
+    min-width: 0;
+  }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Water Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <button id="homeBtn" class="home-btn" aria-label="Go to home screen">Home</button>
+    <h1>Welcome to the Charity Water Game Prototype</h1>
+    <div class="game-wrapper">
+    <header class="top-bar">
+      <div class="brand">
+        <h1>Water Fills Fast</h1>
+        <p>charity: water prototype</p>
+      </div>
+
+      <div class="hud">
+        <div class="hud-card">
+          <span class="label">Score</span>
+          <span id="score">0</span>
+        </div>
+        <div class="hud-card">
+          <span class="label">Time</span>
+          <span id="timer">30</span>
+        </div>
+        <div class="hud-card">
+          <span class="label">Bottles</span>
+          <span id="bottles">0</span>
+        </div>
+        <div class="hud-card">
+          <span class="label">Waste</span>
+          <span id="waste">0</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <section class="instructions-card" id="instructionsCard">
+        <h2>How to Play</h2>
+        <p>
+          Press and hold the fill button to raise the water level.
+          Release in the blue target zone to score points.
+          Overfill the bottle and you create waste.
+        </p>
+        <button id="startBtn" class="primary-btn">Start Game</button>
+      </section>
+
+      <section class="play-area hidden" id="playArea">
+        <div class="left-panel">
+          <div class="feedback-box">
+            <h2>Status</h2>
+            <p id="feedback">Press and hold the button to fill the bottle.</p>
+          </div>
+
+          <div class="controls-box">
+            <button id="fillBtn" class="fill-btn">Hold to Fill</button>
+            <button id="resetBtn" class="secondary-btn">Reset Game</button>
+          </div>
+        </div>
+
+        <div class="bottle-section">
+          <div class="bottle-and-dump">
+            <div class="bottle-container">
+              <div class="target-zone"></div>
+              <div id="waterFill" class="water-fill"></div>
+            </div>
+
+            <div class="waste-area">
+              <div
+                id="trashBottle"
+                class="trash-bottle hidden"
+                draggable="true"
+                aria-label="Contaminated bottle"
+              >
+                Contaminated Bottle
+              </div>
+              <div id="wasteDump" class="waste-dump" aria-label="Waste dump">
+                Waste Dump
+              </div>
+            </div>
+          </div>
+          <p class="bottle-label">Fill the bottle into the target zone</p>
+        </div>
+      </section>
+
+      <section class="end-screen hidden" id="endScreen">
+        <h2>Round Complete</h2>
+        <p id="finalMessage">Nice work!</p>
+        <button id="restartBtn" class="primary-btn">Play Again</button>
+      </section>
+
+      <div id="winPopup" class="popup-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="winPopupTitle">
+        <div class="popup-card">
+          <h2 id="winPopupTitle">You Win!</h2>
+          <p>Youve helped fill waters! You win!</p>
+          <button id="closePopupBtn" class="primary-btn popup-btn">Awesome!</button>
+        </div>
+      </div>
+    </main>
+  </div>
+    <script src="script.js"></script>
+</body>
+</html>
