@@ -26,16 +26,18 @@ Secondary Colors:
 
   --ink: #1f2a2e;
   --soft-paper: #fffdf7;
+  --game-font: "Proxima Nova Black", "Proxima Nova", "Arial Black", sans-serif;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: var(--game-font);
 }
 
 body {
-  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-family: var(--game-font);
   background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), 
               url('img/cw_logo.png') center / contain no-repeat fixed;
   background-color: linear-gradient(to right, #ffe48a, #a8d9ff);
@@ -53,7 +55,7 @@ body {
   padding: 14px 24px;
   font-size: 1.25rem;
   font-weight: bold;
-  font-family: "Bangers", "Trebuchet MS", sans-serif;
+  font-family: var(--game-font);
   letter-spacing: 1.2px;
   cursor: pointer;
   color: white;
@@ -74,17 +76,19 @@ body {
   z-index: 999;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 10px;
 }
 
 .difficulty-btn {
   border: none;
   border-radius: 10px;
-  padding: 12px 20px;
-  min-width: 130px;
+  padding: 12px 18px;
+  width: 156px;
+  min-width: 0;
   font-size: 1.1rem;
   font-weight: bold;
-  font-family: "Bangers", "Trebuchet MS", sans-serif;
+  font-family: var(--game-font);
   letter-spacing: 1.2px;
   cursor: pointer;
   color: #fff;
@@ -121,7 +125,8 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  min-width: 130px;
+  width: 172px;
+  min-width: 0;
   box-shadow: 0 4px 10px rgba(46, 157, 247, 0.15);
 }
 
@@ -131,10 +136,11 @@ body {
   border-radius: 8px;
   padding: 10px 12px;
   margin-top: 8px;
+  width: 172px;
   font-size: 0.9rem;
   color: #5d4a00;
   text-align: center;
-  font-family: "Bangers", "Trebuchet MS", sans-serif;
+  font-family: var(--game-font);
   letter-spacing: 0.5px;
   box-shadow: 0 2px 6px rgba(255, 215, 0, 0.2);
 }
@@ -211,13 +217,13 @@ body > h1 {
   margin: 20px 0 0;
   color: #0f7e3c;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
-  font-family: "Bangers", "Trebuchet MS", sans-serif;
+  font-family: var(--game-font);
   letter-spacing: 1.8px;
   font-size: clamp(2.1rem, 5vw, 3.2rem);
 }
 
 p {
-  font-family: "Bangers", "Trebuchet MS", sans-serif;
+  font-family: var(--game-font);
   letter-spacing: 0.8px;
 }
 
@@ -239,7 +245,7 @@ p {
 .brand h1 {
   font-size: 2rem;
   color: var(--dark-green);
-  font-family: "Bangers", "Trebuchet MS", sans-serif;
+  font-family: var(--game-font);
   letter-spacing: 1.6px;
 }
 
@@ -312,7 +318,7 @@ p {
 .end-screen h2,
 .feedback-box h2 {
   margin-bottom: 12px;
-  font-family: "Bangers", "Trebuchet MS", sans-serif;
+  font-family: var(--game-font);
   letter-spacing: 1.2px;
   font-size: 1.9rem;
 }
@@ -332,7 +338,7 @@ p {
   cursor: pointer;
   font-size: 1.1rem;
   font-weight: bold;
-  font-family: "Bangers", "Trebuchet MS", sans-serif;
+  font-family: var(--game-font);
   letter-spacing: 1.1px;
   transition: transform 0.15s ease, opacity 0.15s ease;
 }
@@ -495,7 +501,7 @@ p {
   justify-content: center;
   text-align: center;
   padding: 10px;
-  font-family: "Bangers", "Trebuchet MS", sans-serif;
+  font-family: var(--game-font);
   letter-spacing: 1px;
 }
 
@@ -540,7 +546,7 @@ p {
 }
 
 .popup-card h2 {
-  font-family: "Bangers", "Trebuchet MS", sans-serif;
+  font-family: var(--game-font);
   letter-spacing: 1.2px;
   color: var(--dark-green);
   margin-bottom: 10px;
@@ -555,6 +561,26 @@ p {
   margin-top: 0;
 }
 
+.site-footer {
+  margin: 20px 0 28px;
+  text-align: center;
+}
+
+.site-footer p {
+  color: #2f3f4a;
+  font-size: 0.95rem;
+}
+
+.site-footer a {
+  color: var(--blue);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.site-footer a:hover {
+  color: var(--dark-green);
+}
+
 @media (max-width: 768px) {
   .home-btn {
     position: static;
@@ -567,11 +593,11 @@ p {
   }
 
   .difficulty-btn {
-    width: 100%;
+    width: 156px;
   }
 
   .sound-control-box {
-    width: 100%;
+    width: 172px;
   }
 
   .play-area {
